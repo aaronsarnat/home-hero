@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home Hero Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <!-- Ignore boilerplate styles -->
+    <link rel="stylesheet" href="./css/boilerplate.css">
+    <link rel="stylesheet" href="./css/home-hero.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <header class="faux-header">
+        <div></div>
+    </header>
+    <main>
+
+        <section>
+            <div class="homeHero">
+                <h1 class="homeHeroHeading">Breakthrough AI to solve the world’s biggest problems</h1>
+                <a href="#" class="font_button faux-btn"></a>
+
+                <div class="drawArea">
+                    <div class="mark">
+                        <svg class="pinTop" aria-hidden="true">
+                            <use href="#corner-pin-svg-clippable" />
+                        </svg>
+                        <svg class="pinRight" aria-hidden="true">
+                            <use href="#corner-pin-svg-clippable" />
+                        </svg>
+                        <svg class="pinBottom" aria-hidden="true">
+                            <use href="#corner-pin-svg-clippable" />
+                        </svg>
+                        <svg class="pinLeft" aria-hidden="true">
+                            <use href="#corner-pin-svg-clippable" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div style="height:2222px"></div>
+
+    </main>
+
+    <!-- From https://alexwlchan.net/2021/inner-outer-strokes-svg/ -->
+    <svg id="svg-sprite" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <path id="corner-pin-path" d="M20.499,40H0.0255V20.4996h16.4816c2.2005,0,3.9919-1.7937,3.9919-3.997V0h19.4756v20.4996 C39.9745,31.2715,31.2571,40,20.499,40z" />
+        </defs>
+
+        <symbol viewBox="0 0 40 40" id="corner-pin-svg-clippable">
+            <use href="#corner-pin-path" clip-path="url(#corner-pin-clip-path)" />
+        
+            <clipPath id="corner-pin-clip-path">
+                <use href="#corner-pin-path"/>
+            </clipPath>
+        </symbol>
+    </svg>
+
+
+</body>
+
+</html>
