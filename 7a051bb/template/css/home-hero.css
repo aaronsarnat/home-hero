@@ -656,6 +656,11 @@
 
 @-moz-document url-prefix() {
     .homeHero {
+        @container (max-width: 899px) {
+            &, & * {
+                animation: none;
+            }
+        }
         @container (min-width: 900px) {
             aspect-ratio: 16 / 9;
             height: auto;
@@ -666,7 +671,6 @@
     .mark {
         /* Improves animation performance on FF */
         transform-style: flat;
-        animation-name: none;
     }
     /* FF needs translate instead of lef/right on stroked elements */
     .pinRight,
@@ -688,13 +692,11 @@
             }
         }
         .pinRight {
-            animation-name: none;
             @container (min-width: 900px) {
                 animation-name: pinRightKeyframesMoz;
             }
         }
         .pinLeft {
-            animation-name: none;
             @container (min-width: 900px) {
                 animation-name: pinLeftKeyframesMoz;
             }
