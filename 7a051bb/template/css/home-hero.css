@@ -263,30 +263,6 @@
     }
 }
 
-@keyframes pinRightKeyframesMozMobile {
-    0% {
-        translate: 340% -184%;
-        stroke-width: var(--pin-stroke-width-before);
-    }
-    11.3% {
-        translate: 137.75% 17.5%;
-    }
-    15.7% {
-        translate: 140.75% 14.5%;
-        stroke-width: var(--pin-stroke-width-before);
-    }
-    31% {
-        translate: 155.25% 51%;
-        stroke-width: var(--pin-stroke-width-middle);
-    }
-    45% {
-        stroke-width: var(--pin-stroke-width-after);
-    }
-    51% {
-        translate: 171.75% 51%;
-    }
-}
-
 @keyframes pinBottomKeyframes {
     0% {
         top: 133%;
@@ -471,6 +447,10 @@
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    &,
+    & * {
+        transform-style: preserve-3d;
+    }
     /* @md Desktop overrides */
     @container (min-width: 900px) {
         aspect-ratio: 16 / 9;
@@ -675,13 +655,18 @@
 /* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
 
 @-moz-document url-prefix() {
+    .homeHero {
+        @container (min-width: 900px) {
+            aspect-ratio: 16 / 9;
+            height: auto;
+            max-height: 90vh;
+            padding: 120px 20px;
+        }
+    }
     .mark {
         /* Improves animation performance on FF */
         transform-style: flat;
-        animation: none;
-        @container (min-width: 900px) {
-            animation-name: markKeyframes;
-        }
+        animation-name: none;
     }
     /* FF needs translate instead of lef/right on stroked elements */
     .pinRight,
@@ -697,35 +682,22 @@
     }
     /* FF has special keyframes for stroked elements */
     @media not (prefers-reduced-motion) {
+        .mark {
+            @container (min-width: 900px) {
+                animation-name: markKeyframes;
+            }
+        }
         .pinRight {
-            animation: none;
+            animation-name: none;
             @container (min-width: 900px) {
                 animation-name: pinRightKeyframesMoz;
             }
         }
         .pinLeft {
-            animation: none;
+            animation-name: none;
             @container (min-width: 900px) {
                 animation-name: pinLeftKeyframesMoz;
             }
-        }
-    }
-    .homeHero {
-        .homeHeroHeading,
-        .font_button,
-        .mark,
-        .pinTop,
-        .pinRight,
-        .pinBottom,
-        .pinLeft,
-        #corner-pin-path {
-            animation: none;
-        }
-        @container (min-width: 900px) {
-            aspect-ratio: 16 / 9;
-            height: auto;
-            max-height: 90vh;
-            padding: 120px 20px;
         }
     }
 }
