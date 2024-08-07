@@ -448,10 +448,6 @@
     padding: 20px;
     box-sizing: border-box;
     transform-style: preserve-3d;
-    /* &,
-    & * {
-        transform-style: preserve-3d;
-    } */
     /* @md Desktop overrides */
     @container (min-width: 900px) {
         aspect-ratio: 16 / 9;
@@ -524,7 +520,6 @@
     animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
     scale: var(--mark-scale-after-mobile);
     rotate: 0deg;
-    /* Fixes flickering bug in Chrome */
     @container (min-width: 900px) {
         scale: var(--mark-scale-after);
     }
@@ -542,8 +537,6 @@
     stroke: var(--pink);
     animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
     fill: none;
-    /* Fixes a weird border artifact bug in Chrome */
-    /* box-shadow: 0 0 0 -1px transparent; */
 }
 
 .pinTop {
@@ -667,10 +660,6 @@
             max-height: 90vh;
             padding: 120px 20px;
         }
-    }
-    .mark {
-        /* Improves animation performance on FF */
-        transform-style: flat;
     }
     /* FF needs translate instead of lef/right on stroked elements */
     .pinRight,
