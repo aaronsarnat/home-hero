@@ -1,6 +1,6 @@
 :root {
     --timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
-    --duration: 15s;
+    --duration: 7s;
     --loop: forwards;
     --delay: 0s;
     --pin-stroke-width-before: 25;
