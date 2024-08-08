@@ -451,7 +451,8 @@
     /* Mobile overrides */
     @container (max-width: 899px) {
         & * {
-            transform-style: preserve-3d;
+            transform-style: preserve-3d !important;
+            backface-visibility: hidden !important;
         }
     }
     /* @md Desktop overrides */
