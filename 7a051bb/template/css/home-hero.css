@@ -56,10 +56,6 @@
     0% {
         scale: var(--mark-scale-before);
         rotate: -90deg;
-        opacity: 0;
-    }
-    4% {
-        opacity: 1;
     }
     11.3% {
         scale: var(--mark-scale-before);
@@ -84,10 +80,6 @@
 @keyframes markKeyframesMobile {
     0% {
         scale: var(--mark-scale-before-mobile);
-        opacity: 0;
-    }
-    4% {
-        opacity: 1;
     }
     11.3% {
         scale: var(--mark-scale-before-mobile);
@@ -240,30 +232,6 @@
 /* FF specific pinRight keyframes */
 
 @keyframes pinRightKeyframesMoz {
-    0% {
-        translate: 340% -184%;
-        stroke-width: var(--pin-stroke-width-before);
-    }
-    11.3% {
-        translate: 137.75% 17.5%;
-    }
-    15.7% {
-        translate: 140.75% 14.5%;
-        stroke-width: var(--pin-stroke-width-before);
-    }
-    31% {
-        translate: 155.25% 51%;
-        stroke-width: var(--pin-stroke-width-middle);
-    }
-    45% {
-        stroke-width: var(--pin-stroke-width-after);
-    }
-    51% {
-        translate: 171.75% 51%;
-    }
-}
-
-@keyframes pinRightKeyframesMozMobile {
     0% {
         translate: 340% -184%;
         stroke-width: var(--pin-stroke-width-before);
@@ -473,6 +441,7 @@
     box-sizing: border-box;
     /* @md Desktop overrides */
     @container (min-width: 900px) {
+        transform-style: preserve-3d;
         aspect-ratio: 16 / 9;
         height: auto;
         max-height: 90vh;
@@ -546,6 +515,7 @@
     /* Fixes flickering bug in Chrome */
     transform-style: preserve-3d;
     @container (min-width: 900px) {
+        transform-style: flat;
         scale: var(--mark-scale-after);
     }
 }
@@ -563,7 +533,7 @@
     animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
     fill: none;
     /* Fixes a weird border artifact bug in Chrome */
-    box-shadow: 0 0 0 -1px transparent;
+    /* box-shadow: 0 0 0 -1px transparent; */
 }
 
 .pinTop {
@@ -667,7 +637,9 @@
         }
     }
     #corner-pin-path {
-        animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
+        @container (min-width: 900px) {
+            animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
+        }
     }
 }
 
@@ -675,12 +647,17 @@
 /* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
 
 @-moz-document url-prefix() {
-    .mark {
-        /* Improves animation performance on FF */
-        transform-style: flat;
-        animation: none;
+    .homeHero {
+        @container (max-width: 899px) {
+            &, & * {
+                animation: none;
+            }
+        }
         @container (min-width: 900px) {
-            animation-name: markKeyframes;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            max-height: 90vh;
+            padding: 120px 20px;
         }
     }
     /* FF needs translate instead of lef/right on stroked elements */
@@ -697,35 +674,20 @@
     }
     /* FF has special keyframes for stroked elements */
     @media not (prefers-reduced-motion) {
+        .mark {
+            @container (min-width: 900px) {
+                animation-name: markKeyframes;
+            }
+        }
         .pinRight {
-            animation: none;
             @container (min-width: 900px) {
                 animation-name: pinRightKeyframesMoz;
             }
         }
         .pinLeft {
-            animation: none;
             @container (min-width: 900px) {
                 animation-name: pinLeftKeyframesMoz;
             }
-        }
-    }
-    .homeHero {
-        .homeHeroHeading,
-        .font_button,
-        .mark,
-        .pinTop,
-        .pinRight,
-        .pinBottom,
-        .pinLeft,
-        #corner-pin-path {
-            animation: none;
-        }
-        @container (min-width: 900px) {
-            aspect-ratio: 16 / 9;
-            height: auto;
-            max-height: 90vh;
-            padding: 120px 20px;
         }
     }
 }
