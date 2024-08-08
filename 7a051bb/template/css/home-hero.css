@@ -84,10 +84,6 @@
 @keyframes markKeyframesMobile {
     0% {
         scale: var(--mark-scale-before-mobile);
-        opacity: 0;
-    }
-    4% {
-        opacity: 1;
     }
     11.3% {
         scale: var(--mark-scale-before-mobile);
