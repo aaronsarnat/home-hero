@@ -448,6 +448,12 @@
     padding: 20px;
     box-sizing: border-box;
     transform-style: preserve-3d;
+    /* Mobile overrides */
+    @container (max-width: 899px) {
+        & * {
+            transform-style: preserve-3d;
+        }
+    }
     /* @md Desktop overrides */
     @container (min-width: 900px) {
         aspect-ratio: 16 / 9;
