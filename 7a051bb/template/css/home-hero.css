@@ -655,14 +655,13 @@
     .pinBottom,
     .pinLeft {
         /* transform-style: flat !important; */
-        box-shadow: 0 0 0 -1px transparent;
+        box-shadow: 0 0 0 0 transparent;
     }
 }
 
 
-}
-
 /* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
+
 @-moz-document url-prefix() {
     .homeHero {
         @container (max-width: 899px) {
@@ -677,23 +676,25 @@
             padding: 120px 20px;
         }
     }
+    .pinTop,
+    .pinRight,
+    .pinBottom,
+    .pinLeft {
+        box-shadow: none !important;
+    }
     /* FF needs translate instead of lef/right on stroked elements */
-    
     .pinRight,
     .pinLeft {
         top: auto;
         left: auto;
     }
-    
     .pinRight {
         translate: 171.75% 51%;
     }
-    
     .pinLeft {
         translate: -16.75% 104.5%;
     }
     /* FF has special keyframes for stroked elements */
-    
     @media not (prefers-reduced-motion) {
         .mark {
             @container (min-width: 900px) {
