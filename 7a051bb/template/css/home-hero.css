@@ -636,10 +636,11 @@
             animation-name: pinLeftKeyframes;
         }
     }
+}
+
+@media screen and (min-width: 900px) {
     #corner-pin-path {
-        @container (min-width: 900px) {
-            animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
-        }
+        animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
     }
 }
 
