@@ -638,9 +638,21 @@
     }
 }
 
+
+/* Desktop only - improves mobile performance */
+
 @media screen and (min-width: 900px) {
     #corner-pin-path {
         animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
+    }
+}
+
+
+/* Mobile only - improves mobile performance */
+
+@media screen and (max-width: 899px) and (hover: none) {
+    * {
+        transform-style: preserve-3d;
     }
 }
 
