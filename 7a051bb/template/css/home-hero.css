@@ -56,8 +56,6 @@
     0% {
         scale: var(--mark-scale-before);
         rotate: -90deg;
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     11.3% {
         scale: var(--mark-scale-before);
@@ -65,14 +63,10 @@
     15.7% {
         scale: var(--mark-scale-before);
         rotate: -90deg;
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     31% {
         scale: var(--mark-scale-before);
         rotate: 0deg;
-        transform-style: flat;
-        box-shadow: none;
     }
     51% {
         scale: var(--mark-scale-after);
@@ -108,8 +102,6 @@
     0% {
         top: -72%;
         left: -72%;
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     11.3% {
         top: 7%;
@@ -118,14 +110,10 @@
     15.7% {
         top: 5.75%;
         left: 5.75%;
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     31% {
         top: 0;
         left: 20%;
-        transform-style: flat;
-        box-shadow: none;
     }
     51% {
         top: 0;
@@ -181,8 +169,6 @@
         top: -72%;
         left: 133%;
         stroke-width: var(--pin-stroke-width-before);
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     11.3% {
         top: 7%;
@@ -193,15 +179,11 @@
         top: 5.75%;
         left: 55.25%;
         stroke-width: var(--pin-stroke-width-before);
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     31% {
         top: 20%;
         left: 60.85%;
         stroke-width: var(--pin-stroke-width-middle);
-        transform-style: flat;
-        box-shadow: none;
     }
     45% {
         top: 20%;
@@ -277,8 +259,6 @@
     0% {
         top: 133%;
         left: 133%;
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     11.3% {
         top: 54%;
@@ -287,14 +267,10 @@
     15.7% {
         top: 55.25%;
         left: 55.25%;
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     31% {
         top: 60.8%;
         left: 40.9%;
-        transform-style: flat;
-        box-shadow: none;
     }
     51% {
         top: 60.8%;
@@ -350,8 +326,6 @@
         top: 133%;
         left: -72%;
         stroke-width: var(--pin-stroke-width-before);
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     11.3% {
         top: 54%;
@@ -362,15 +336,11 @@
         top: 55.25%;
         left: 5.75%;
         stroke-width: var(--pin-stroke-width-before);
-        transform-style: preserve-3d;
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
     31% {
         top: 40.9%;
         left: 0;
         stroke-width: var(--pin-stroke-width-middle);
-        transform-style: flat;
-        box-shadow: none;
     }
     45% {
         top: 40.9%;
@@ -676,20 +646,16 @@
 /* Mobile only - improves mobile performance */
 
 @media screen and (max-width: 899px) and (hover: none) {
-    html,
-    body,
-    main,
-    section,
-    .homeHero,
-    .homeHero * {
+    /* * {
         transform-style: preserve-3d;
     }
-    .mark,
+    .mark, */
     .pinTop,
     .pinRight,
     .pinBottom,
     .pinLeft {
-        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+        /* transform-style: flat !important; */
+        box-shadow: 0 0 0 0 transparent;
     }
 }
 
@@ -714,6 +680,7 @@
     .pinRight,
     .pinBottom,
     .pinLeft {
+        /* transform-style: flat !important; */
         box-shadow: none !important;
     }
     /* FF needs translate instead of lef/right on stroked elements */
