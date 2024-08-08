@@ -448,13 +448,6 @@
     padding: 20px;
     box-sizing: border-box;
     transform-style: preserve-3d;
-    /* Mobile overrides */
-    /* @container (max-width: 899px) {
-        & * {
-            transform-style: flat !important;
-            backface-visibility: hidden !important;
-        }
-    } */
     /* @md Desktop overrides */
     @container (min-width: 900px) {
         aspect-ratio: 16 / 9;
@@ -648,6 +641,15 @@
     }
     #corner-pin-path {
         animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
+    }
+}
+
+
+/* Mobile only - improves rendering performance */
+
+@media screen and (max-width: 899px) and (hover: none) {
+    * {
+        transform-style: preserve-3d;
     }
 }
 
