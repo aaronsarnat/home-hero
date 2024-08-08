@@ -645,7 +645,8 @@
 
 /* Mobile only - improves mobile performance */
 
-@media screen and (max-width: 899px) and (hover: none) {
+
+/* @media screen and (max-width: 899px) and (hover: none) {
     * {
         transform-style: preserve-3d;
     }
@@ -656,7 +657,7 @@
     .pinLeft {
         transform-style: flat !important;
     }
-}
+} */
 
 
 /* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
