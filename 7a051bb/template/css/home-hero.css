@@ -680,7 +680,6 @@
     .pinRight,
     .pinBottom,
     .pinLeft {
-        /* transform-style: flat !important; */
         box-shadow: none !important;
     }
     /* FF needs translate instead of lef/right on stroked elements */
