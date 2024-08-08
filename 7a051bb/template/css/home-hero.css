@@ -1,6 +1,6 @@
 :root {
     --timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
-    --duration: 5s;
+    --duration: 7s;
     --loop: forwards;
     --delay: 0s;
     --pin-stroke-width-before: 25;
@@ -512,10 +512,7 @@
     animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
     scale: var(--mark-scale-after-mobile);
     rotate: 0deg;
-    /* Fixes flickering bug in Chrome */
-    transform-style: preserve-3d;
     @container (min-width: 900px) {
-        transform-style: flat;
         scale: var(--mark-scale-after);
     }
 }
@@ -532,8 +529,6 @@
     stroke: var(--pink);
     animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
     fill: none;
-    /* Fixes a weird border artifact bug in Chrome */
-    /* box-shadow: 0 0 0 -1px transparent; */
 }
 
 .pinTop {
@@ -653,6 +648,13 @@
 @media screen and (max-width: 899px) and (hover: none) {
     * {
         transform-style: preserve-3d;
+    }
+    .mark,
+    .pinTop,
+    .pinRight,
+    .pinBottom,
+    .pinLeft {
+        transform-style: flat !important;
     }
 }
 
