@@ -1,0 +1,791 @@
+:root {
+    --timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    --duration: 7s;
+    --loop: forwards;
+    --delay: 0s;
+    --pin-stroke-width-before: 25;
+    --pin-stroke-width-middle: 2.5;
+    --pin-stroke-width-after: 0.12;
+    --pin-stroke-timing-function: ease-out;
+    --home-hero-bg: var(--dark-green);
+    --mark-scale-before: 0.0735;
+    --mark-scale-after: 1;
+    --mark-scale-before-mobile: 0.225;
+    --mark-scale-after-mobile: 2.125;
+}
+
+@keyframes textKeyframes {
+    0% {
+        scale: 0;
+        opacity: 0;
+    }
+    31% {
+        scale: 0;
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    51% {
+        scale: 1;
+        opacity: 1;
+    }
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes btnKeyframes {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    38% {
+        opacity: 0;
+    }
+    43% {
+        scale: 1;
+    }
+    48% {
+        opacity: 1;
+    }
+}
+
+
+/* */
+
+@keyframes markKeyframes {
+    0% {
+        scale: var(--mark-scale-before);
+        rotate: -90deg;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    11.3% {
+        scale: var(--mark-scale-before);
+    }
+    15.7% {
+        scale: var(--mark-scale-before);
+        rotate: -90deg;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    31% {
+        scale: var(--mark-scale-before);
+        rotate: 0deg;
+        transform-style: flat;
+        box-shadow: none;
+    }
+    51% {
+        scale: var(--mark-scale-after);
+    }
+    100% {
+        scale: var(--mark-scale-after);
+        rotate: 0deg;
+    }
+}
+
+
+/* FF specific pinRight keyframes */
+
+@keyframes markKeyframesMoz {
+    0% {
+        scale: var(--mark-scale-before);
+        rotate: -90deg;
+    }
+    11.3% {
+        scale: var(--mark-scale-before);
+    }
+    15.7% {
+        scale: var(--mark-scale-before);
+        rotate: -90deg;
+    }
+    31% {
+        scale: var(--mark-scale-before);
+        rotate: 0deg;
+    }
+    51% {
+        scale: var(--mark-scale-after);
+    }
+    100% {
+        scale: var(--mark-scale-after);
+        rotate: 0deg;
+    }
+}
+
+@keyframes markKeyframesMobile {
+    0% {
+        scale: var(--mark-scale-before-mobile);
+    }
+    11.3% {
+        scale: var(--mark-scale-before-mobile);
+    }
+    15.7% {
+        scale: var(--mark-scale-before-mobile);
+    }
+    31% {
+        scale: var(--mark-scale-before-mobile);
+    }
+    51% {
+        scale: var(--mark-scale-after-mobile);
+    }
+    100% {
+        scale: var(--mark-scale-after-mobile);
+    }
+}
+
+
+/* */
+
+@keyframes pinTopKeyframes {
+    0% {
+        top: -72%;
+        left: -72%;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    11.3% {
+        top: 7%;
+        left: 7%;
+    }
+    15.7% {
+        top: 5.75%;
+        left: 5.75%;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    31% {
+        top: 0;
+        left: 20%;
+        transform-style: flat;
+        box-shadow: none;
+    }
+    51% {
+        top: 0;
+        left: 20%;
+    }
+    100% {
+        top: 0;
+        left: 20%;
+    }
+}
+
+@keyframes pinTopKeyframesMobile {
+    0% {
+        top: -72%;
+        left: -72%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    11.3% {
+        top: 7%;
+        left: 7%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    15.7% {
+        top: 5.75%;
+        left: 5.75%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    31% {
+        top: 0;
+        left: 20%;
+        stroke-width: var(--pin-stroke-width-middle);
+    }
+    45% {
+        top: 0;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+    51% {
+        top: 0;
+        left: 15%;
+    }
+    100% {
+        top: 0;
+        left: 15%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+}
+
+
+/* Safari requires translate via top and left for proportional scaling */
+
+
+/* */
+
+@keyframes pinRightKeyframes {
+    0% {
+        top: -72%;
+        left: 133%;
+        stroke-width: var(--pin-stroke-width-before);
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    11.3% {
+        top: 7%;
+        left: 54%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    15.7% {
+        top: 5.75%;
+        left: 55.25%;
+        stroke-width: var(--pin-stroke-width-before);
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    31% {
+        top: 20%;
+        left: 60.85%;
+        stroke-width: var(--pin-stroke-width-middle);
+        transform-style: flat;
+        box-shadow: none;
+    }
+    45% {
+        top: 20%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+    51% {
+        top: 20%;
+        left: 67.4%;
+    }
+    100% {
+        top: 20%;
+        left: 67.4%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+}
+
+@keyframes pinRightKeyframesMobile {
+    0% {
+        top: -72%;
+        left: 133%;
+    }
+    11.3% {
+        top: 7%;
+        left: 54%;
+    }
+    15.7% {
+        top: 5.75%;
+        left: 55.25%;
+    }
+    31% {
+        top: 20%;
+        left: 60.85%;
+    }
+    51% {
+        top: 20%;
+        left: 58.25%;
+    }
+    100% {
+        top: 20%;
+        left: 58.25%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+}
+
+
+/* FF specific pinRight keyframes */
+
+@keyframes pinRightKeyframesMoz {
+    0% {
+        translate: 340% -184%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    11.3% {
+        translate: 137.75% 17.5%;
+    }
+    15.7% {
+        translate: 140.75% 14.5%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    31% {
+        translate: 155.25% 51%;
+        stroke-width: var(--pin-stroke-width-middle);
+    }
+    45% {
+        stroke-width: var(--pin-stroke-width-after);
+    }
+    51% {
+        translate: 171.75% 51%;
+    }
+}
+
+
+/* */
+
+@keyframes pinBottomKeyframes {
+    0% {
+        top: 133%;
+        left: 133%;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    11.3% {
+        top: 54%;
+        left: 54%;
+    }
+    15.7% {
+        top: 55.25%;
+        left: 55.25%;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    31% {
+        top: 60.8%;
+        left: 40.9%;
+        transform-style: flat;
+        box-shadow: none;
+    }
+    51% {
+        top: 60.8%;
+        left: 40.9%;
+    }
+    100% {
+        top: 60.8%;
+        left: 40.9%;
+    }
+}
+
+@keyframes pinBottomKeyframesMobile {
+    0% {
+        top: 133%;
+        left: 133%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    11.3% {
+        top: 54%;
+        left: 54%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    15.7% {
+        top: 55.25%;
+        left: 55.25%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    31% {
+        top: 60.8%;
+        left: 40.9%;
+        stroke-width: var(--pin-stroke-width-middle);
+    }
+    45% {
+        top: 60.8%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+    51% {
+        top: 60.8%;
+        left: 45.9%;
+    }
+    100% {
+        top: 60.8%;
+        left: 45.9%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+}
+
+
+/* Safari requires translate via top and left for proportional scaling */
+
+
+/* */
+
+@keyframes pinLeftKeyframes {
+    0% {
+        top: 133%;
+        left: -72%;
+        stroke-width: var(--pin-stroke-width-before);
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    11.3% {
+        top: 54%;
+        left: 7%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    15.7% {
+        top: 55.25%;
+        left: 5.75%;
+        stroke-width: var(--pin-stroke-width-before);
+        transform-style: preserve-3d;
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+    31% {
+        top: 40.9%;
+        left: 0;
+        stroke-width: var(--pin-stroke-width-middle);
+        transform-style: flat;
+        box-shadow: none;
+    }
+    45% {
+        top: 40.9%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+    51% {
+        top: 40.9%;
+        left: -6.5%;
+    }
+    100% {
+        top: 40.9%;
+        left: -6.5%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+}
+
+@keyframes pinLeftKeyframesMobile {
+    0% {
+        top: 133%;
+        left: -72%;
+    }
+    11.3% {
+        top: 54%;
+        left: 7%;
+    }
+    15.7% {
+        top: 55.25%;
+        left: 5.75%;
+    }
+    31% {
+        top: 40.9%;
+        left: 0;
+    }
+    51% {
+        top: 40.9%;
+        left: 2.75%;
+    }
+    100% {
+        top: 40.9%;
+        left: 2.75%;
+    }
+}
+
+
+/* FF specific pinLeft keyframes */
+
+@keyframes pinLeftKeyframesMoz {
+    0% {
+        translate: -184% 340%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    11.3% {
+        translate: 17.5% 137.75%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    15.7% {
+        translate: 14.5% 140.75%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+    31% {
+        translate: 0.25% 104.5%;
+        stroke-width: var(--pin-stroke-width-middle);
+    }
+    45% {
+        stroke-width: var(--pin-stroke-width-after);
+    }
+    51% {
+        translate: -16.75% 104.5%;
+    }
+}
+
+
+/* Animate SVG point data - https://css-tricks.com/svg-properties-and-css/ */
+
+@keyframes pinPathKeyframes {
+    0% {
+        d: path("M19.1697,31.7183H0.0255v-4.3437h17.4068c9.5161,0,11.0041-3.5715,11.0041-11.2937V0h4.4403v18.2044 C32.8766,27.1815,27.085,31.7183,19.1697,31.7183z");
+    }
+    11.3% {
+        d: path("M20.499,40H0.0255V20.4996h16.4816c2.2005,0,3.9919-1.7937,3.9919-3.997V0h19.4756v20.4996 C39.9745,31.2715,31.2571,40,20.499,40z");
+    }
+}
+
+.homeHero {
+    background: var(--dark-green);
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 92svh;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        transform-style: preserve-3d;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        max-height: 90vh;
+        padding: 120px 20px;
+    }
+}
+
+.homeHeroHeading {
+    margin: 0;
+    padding-top: 0.347cqw;
+    max-width: 70cqw;
+    font-size: clamp(2rem, 4.23612cqw, 7rem);
+    line-height: 1.04918;
+    font-weight: 400;
+    letter-spacing: -0.008em;
+    color: var(--off-white);
+    position: relative;
+    z-index: 1;
+    animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
+    /* Constraining first line width */
+    text-indent: 0.5em;
+    &:before {
+        content: '';
+        float: right;
+        width: 0.5em;
+        height: 0.1em;
+    }
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        max-width: 36.8056cqw;
+    }
+}
+
+.font_button {
+    margin: 3cqh auto -5.13cqw auto;
+    animation: ease-in var(--duration) var(--loop) var(--delay);
+    position: relative;
+    z-index: 2;
+    &:focus {
+        /* a11y: this immediately forces the button to full opacity when focused during opacity animation */
+        opacity: 1 !important;
+    }
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        margin-top: 2.083cqw;
+    }
+}
+
+.drawArea {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.mark {
+    position: absolute;
+    width: 206.5cqw;
+    height: 206.5cqw;
+    pointer-events: none;
+    backface-visibility: hidden;
+    animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
+    scale: var(--mark-scale-after-mobile);
+    rotate: 0deg;
+    @container (min-width: 900px) {
+        scale: var(--mark-scale-after);
+    }
+}
+
+.pinTop,
+.pinRight,
+.pinBottom,
+.pinLeft {
+    width: 39.1%;
+    height: 39.1%;
+    display: block;
+    position: absolute;
+    backface-visibility: hidden;
+    stroke: var(--pink);
+    animation: var(--timing-function) var(--duration) var(--loop) var(--delay);
+    fill: none;
+}
+
+.pinTop {
+    /* rotate: 0deg; */
+    top: 0;
+    left: 15%;
+    stroke-width: var(--pin-stroke-width-after);
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        left: 20%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+}
+
+.pinRight {
+    rotate: 90deg;
+    top: 20%;
+    left: 58.25%;
+    stroke-width: var(--pin-stroke-width-before);
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        left: 67.4%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+}
+
+.pinBottom {
+    rotate: 180deg;
+    top: 60.8%;
+    left: 45.9%;
+    stroke-width: var(--pin-stroke-width-after);
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        left: 40.9%;
+        stroke-width: var(--pin-stroke-width-before);
+    }
+}
+
+.pinLeft {
+    rotate: 270deg;
+    top: 40.9%;
+    left: 2.75%;
+    stroke-width: var(--pin-stroke-width-before);
+    /* @md Desktop overrides */
+    @container (min-width: 900px) {
+        left: -6.5%;
+        stroke-width: var(--pin-stroke-width-after);
+    }
+}
+
+#svg-sprite {
+    overflow: hidden;
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* Only trigger animation if user doesn't have "Reduce motion" engaged */
+
+@media not (prefers-reduced-motion) {
+    .homeHeroHeading {
+        animation-name: textKeyframes;
+    }
+    .font_button {
+        animation-name: btnKeyframes;
+    }
+    .mark {
+        animation-name: markKeyframesMobile;
+        @container (min-width: 900px) {
+            animation-name: markKeyframes;
+        }
+    }
+    .pinTop {
+        animation-name: pinTopKeyframesMobile;
+        @container (min-width: 900px) {
+            animation-name: pinTopKeyframes;
+        }
+    }
+    .pinRight {
+        animation-name: pinRightKeyframesMobile;
+        @container (min-width: 900px) {
+            animation-name: pinRightKeyframes;
+        }
+    }
+    .pinBottom {
+        animation-name: pinBottomKeyframesMobile;
+        @container (min-width: 900px) {
+            animation-name: pinBottomKeyframes;
+        }
+    }
+    .pinLeft {
+        animation-name: pinLeftKeyframesMobile;
+        @container (min-width: 900px) {
+            animation-name: pinLeftKeyframes;
+        }
+    }
+}
+
+
+/* Desktop only - improves mobile performance */
+
+@media screen and (min-width: 900px) {
+    #corner-pin-path {
+        animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
+    }
+}
+
+
+/* Mobile only - improves mobile performance */
+
+
+/* */
+
+@media screen and (max-width: 899px) and (hover: none) {
+    .pinTop,
+    .pinRight,
+    .pinBottom,
+    .pinLeft {
+        box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
+    }
+}
+
+
+/* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
+
+
+/* */
+
+@-moz-document url-prefix() {
+    .homeHero {
+        @container (max-width: 899px) {
+            &, & * {
+                animation: none;
+            }
+        }
+        @container (min-width: 900px) {
+            aspect-ratio: 16 / 9;
+            height: auto;
+            max-height: 90vh;
+            padding: 120px 20px;
+        }
+    }
+    /* .mark, */
+    .pinTop,
+    .pinRight,
+    .pinBottom,
+    .pinLeft {
+        transform-style: flat;
+        box-shadow: none !important;
+    }
+    /* FF needs translate instead of lef/right on stroked elements */
+    .pinRight,
+    .pinLeft {
+        top: auto;
+        left: auto;
+    }
+    .pinRight {
+        translate: 171.75% 51%;
+    }
+    .pinLeft {
+        translate: -16.75% 104.5%;
+    }
+    /* FF has special keyframes for stroked elements */
+    @media not (prefers-reduced-motion) {
+        .mark {
+            @container (min-width: 900px) {
+                animation-name: markKeyframesMoz;
+            }
+        }
+        .pinRight {
+            @container (min-width: 900px) {
+                animation-name: pinRightKeyframesMoz;
+            }
+        }
+        .pinLeft {
+            @container (min-width: 900px) {
+                animation-name: pinLeftKeyframesMoz;
+            }
+        }
+    }
+}
