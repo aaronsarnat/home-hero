@@ -52,9 +52,6 @@
     }
 }
 
-
-/* */
-
 @keyframes markKeyframes {
     0% {
         scale: var(--mark-scale-before);
@@ -100,9 +97,6 @@
         scale: var(--mark-scale-after-mobile);
     }
 }
-
-
-/* */
 
 @keyframes pinTopKeyframes {
     0% {
@@ -169,9 +163,6 @@
 
 
 /* Safari requires translate via top and left for proportional scaling */
-
-
-/* */
 
 @keyframes pinRightKeyframes {
     0% {
@@ -264,9 +255,6 @@
     }
 }
 
-
-/* */
-
 @keyframes pinBottomKeyframes {
     0% {
         top: 133%;
@@ -332,9 +320,6 @@
 
 
 /* Safari requires translate via top and left for proportional scaling */
-
-
-/* */
 
 @keyframes pinLeftKeyframes {
     0% {
@@ -660,23 +645,22 @@
 
 /* Mobile only - improves mobile performance */
 
-
-/* */
-
 @media screen and (max-width: 899px) and (hover: none) {
+    /* * {
+        transform-style: preserve-3d;
+    }
+    .mark, */
     .pinTop,
     .pinRight,
     .pinBottom,
     .pinLeft {
+        /* transform-style: flat !important; */
         box-shadow: 0 0 0 2px transparent, inset 0 0 0 2px transparent;
     }
 }
 
 
 /* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
-
-
-/* */
 
 @-moz-document url-prefix() {
     .homeHero {
