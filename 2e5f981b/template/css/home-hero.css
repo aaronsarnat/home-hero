@@ -722,10 +722,12 @@
             padding: 120px 20px;
         }
     }
+    .mark,
     .pinTop,
     .pinRight,
     .pinBottom,
     .pinLeft {
+        transform-style: flat;
         box-shadow: none !important;
     }
     /* FF needs translate instead of lef/right on stroked elements */
