@@ -86,6 +86,34 @@
     }
 }
 
+
+/* FF specific pinRight keyframes */
+
+@keyframes markKeyframesMoz {
+    0% {
+        scale: var(--mark-scale-before);
+        rotate: -90deg;
+    }
+    11.3% {
+        scale: var(--mark-scale-before);
+    }
+    15.7% {
+        scale: var(--mark-scale-before);
+        rotate: -90deg;
+    }
+    31% {
+        scale: var(--mark-scale-before);
+        rotate: 0deg;
+    }
+    51% {
+        scale: var(--mark-scale-after);
+    }
+    100% {
+        scale: var(--mark-scale-after);
+        rotate: 0deg;
+    }
+}
+
 @keyframes markKeyframesMobile {
     0% {
         scale: var(--mark-scale-before-mobile);
@@ -722,7 +750,7 @@
             padding: 120px 20px;
         }
     }
-    .mark,
+    /* .mark, */
     .pinTop,
     .pinRight,
     .pinBottom,
@@ -746,7 +774,7 @@
     @media not (prefers-reduced-motion) {
         .mark {
             @container (min-width: 900px) {
-                animation-name: markKeyframes;
+                animation-name: markKeyframesMoz;
             }
         }
         .pinRight {
