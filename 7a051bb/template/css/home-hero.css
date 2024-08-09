@@ -660,9 +660,8 @@
 }
 
 
-}
-
 /* Disabling most of the Firefox animation on Android -- low browser share and too many bugs */
+
 @-moz-document url-prefix() {
     .homeHero {
         @container (max-width: 899px) {
@@ -678,22 +677,18 @@
         }
     }
     /* FF needs translate instead of lef/right on stroked elements */
-    
     .pinRight,
     .pinLeft {
         top: auto;
         left: auto;
     }
-    
     .pinRight {
         translate: 171.75% 51%;
     }
-    
     .pinLeft {
         translate: -16.75% 104.5%;
     }
     /* FF has special keyframes for stroked elements */
-    
     @media not (prefers-reduced-motion) {
         .mark {
             @container (min-width: 900px) {
