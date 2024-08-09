@@ -700,7 +700,8 @@
 
 /* Desktop only - improves mobile performance */
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px),
+not (prefers-reduced-motion) {
     #corner-pin-path {
         animation: pinPathKeyframes var(--timing-function) var(--duration) var(--loop) var(--delay);
     }
@@ -774,5 +775,11 @@
                 animation-name: pinLeftKeyframesMoz;
             }
         }
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #corner-pin-path {
+        animation: none !important;
     }
 }
